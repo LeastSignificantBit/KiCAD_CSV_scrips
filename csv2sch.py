@@ -122,8 +122,6 @@ def import_tsv_components(csv_file):
                 cur_comp = {}
                 for i, field_value in enumerate(row):
                     if field_names[i] not in IGNORED_COLUMNS:
-                        if field_value == '':
-                            field_value = '' # KiCad doesn't like empty fields
                         cur_comp[field_names[i]] = field_value
                 components[cur_ref] = cur_comp
     return components
